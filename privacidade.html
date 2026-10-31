@@ -58,7 +58,7 @@
 <main class="conteudo">
   <a class="marca" href="./"><img src="img/icone-192.png" alt=""><span>DASH KA</span></a>
   <h1>Política de privacidade</h1>
-  <p class="data">Atualizada em 30 de outubro de 2026 · vale para o app Dash Ka (a partir da versão 1.2.0) e para o site dashka.app.br</p>
+  <p class="data">Atualizada em 31 de outubro de 2026 · vale para o app Dash Ka (a partir da versão 1.2.0) e para o site dashka.app.br</p>
 
   <div class="resumo">
     <p><strong>Em resumo:</strong> o Dash Ka não tem conta e não tem anúncios. Tudo o que ele lê do carro fica no seu celular. Saem do aparelho só a sua região aproximada (cerca de 11 km de precisão), enviada a um serviço de previsão do tempo para mostrar a temperatura lá fora, e, <strong>só se você permitir</strong>, relatórios anônimos de erros e de como foi a conexão com o carro, para o desenvolvedor descobrir por que o app não conecta em alguns carros.</p>
@@ -92,9 +92,10 @@
   <p>Na primeira abertura o app pergunta se você quer ajudar a melhorar o Dash. Nada vem marcado: sem a sua resposta, ou se você tocar em “NÃO ENVIAR”, nada é enviado. Se você tocar em “ENVIAR”, o app passa a mandar, pelo <strong>Firebase Crashlytics</strong> e pelo <strong>Cloud Firestore</strong> (serviços do Google):</p>
   <ul>
     <li><strong>Relatórios de erro</strong>: quando o app trava ou quando a conexão com o carro falha (em que etapa parou, a mensagem de erro, a versão do app e do Android, o modelo do celular e um identificador aleatório da instalação, criado pelo Crashlytics, que não diz quem você é).</li>
-    <li><strong>Um relatório de compatibilidade</strong> por combinação nova de carro e adaptador: versão do app e do Android, modelo do adaptador (texto que ele mesmo informa, como “ELM327 v1.5”), protocolo, a marca pelo início do chassi (só os 3 primeiros caracteres, como “9BF” da Ford do Brasil), o ano-modelo, o tipo de combustível, quais dados a central oferece, se a conexão deu certo e o tempo médio de cada leitura.</li>
+    <li><strong>Um relatório de compatibilidade</strong> por combinação nova de carro e adaptador: versão do app e do Android, modelo do adaptador (texto que ele mesmo informa, como “ELM327 v1.5”), protocolo, a marca pelo início do chassi (só os 3 primeiros caracteres, como “9BF” da Ford do Brasil) e o nome dela, o ano-modelo, o tipo de combustível, quais dados a central oferece, se a conexão deu certo e o tempo médio de cada leitura.</li>
+    <li><strong>Um resumo de uso</strong> quando o app entra em repouso, se o motor ficou ligado pelo menos 3 minutos (no máximo 3 por dia): versão do app e do Android, protocolo, a marca (como acima), a identificação de software da central quando ela informa (como “S4300 1.40”), quais leituras extras ela ofereceu, a cilindrada, o câmbio e o combustível que você informou, os minutos de motor ligado e os km rodados (só os totais, sem trajeto, horários nem locais), o tempo de cada ciclo de leitura, o maior intervalo sem leitura, quantas vezes reconectou, quantas marchas o app aprendeu e em quanto tempo, quantas puxadas foram gravadas e quantos códigos de falha a central tinha.</li>
   </ul>
-  <p><strong>Nunca vão</strong>: o chassi completo, o endereço do adaptador Bluetooth, a sua localização, o hodômetro, as viagens, os logs, os laudos nem nada que identifique você.</p>
+  <p><strong>Nunca vão</strong>: o chassi completo, o endereço do adaptador Bluetooth, a sua localização, o hodômetro, o trajeto e os horários das viagens, os logs, os laudos nem nada que identifique você.</p>
   <p>Para desligar, abra <strong>Diagnóstico › Ajustes › DIAGNÓSTICO ANÔNIMO</strong>; os relatórios de erro que ainda não tinham saído são descartados. Os dados de erro ficam guardados pelo Google conforme a política do Firebase (<a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>); o desenvolvedor usa os relatórios só para corrigir erros e melhorar a conexão com outros carros.</p>
 
   <h2>O site</h2>
