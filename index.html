@@ -198,7 +198,7 @@
           <button class="botao principal" type="submit" id="entrar">Entrar no teste</button>
         </div>
         <input type="text" name="site" class="isca" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <p class="explica">O Dash Ka está em fase de testes antes de chegar à Play Store. Use o e-mail da conta Google do seu celular Android: ele entra na lista de testadores e você recebe o convite para instalar pela loja. Quando o app for publicado, este botão leva direto para a Play Store. <a href="privacidade#teste">Como usamos o e-mail</a></p>
+        <p class="explica">O Dash Ka está em fase de testes antes de chegar à Play Store. Use o e-mail da conta Google do seu celular Android: ele entra na lista de testadores em até 1 dia e o link para ativar o teste e instalar pela loja aparece aqui mesmo. Quando o app for publicado, este botão leva direto para a Play Store. <a href="privacidade#teste">Como usamos o e-mail</a></p>
         <p class="msg" id="teste-msg" role="status" aria-live="polite"></p>
       </form>
       <div class="botoes">
@@ -306,7 +306,7 @@
   <div class="conteudo">
     <p class="sobre">Perguntas</p>
     <h2>Dúvidas comuns</h2>
-    <details class="so-teste"><summary>Por que não está na Play Store?</summary><p>Está a caminho. O Google exige um período de teste fechado antes de liberar o app para todo mundo. Deixe o e-mail da sua conta Google em "Entrar no teste" no topo da página: você entra na lista de testadores e recebe o convite para instalar pela loja. Com 12 testadores usando o app por 14 dias, o Dash Ka pode ser liberado para todo mundo: cada um que entra ajuda.</p></details>
+    <details class="so-teste"><summary>Por que não está na Play Store?</summary><p>Está a caminho. O Google exige um período de teste fechado antes de liberar o app para todo mundo. Deixe o e-mail da sua conta Google em "Entrar no teste" no topo da página: você entra na lista de testadores em até 1 dia e o link para ativar o teste e instalar pela loja aparece na hora. Com 12 testadores usando o app por 14 dias, o Dash Ka pode ser liberado para todo mundo: cada um que entra ajuda.</p></details>
     <details><summary>Quanto custa?</summary><p>Nada. O Dash Ka é grátis e não tem anúncios. Só o adaptador ELM327 é comprado à parte.</p></details>
     <details><summary>Funciona no meu carro?</summary><p>Completo no Ford Ka da geração lançada em 2014 (até 2021) com motor de 3 cilindros, o 1.0 Ti-VCT ou o 1.5: o app reconhece o motor sozinho pelas marchas e ajusta marcha, consumo e potência. Lê também o freio, o freio de mão e o hodômetro, que são leituras próprias desse Ka. Em outros carros com OBD2 (no Brasil, a partir de 2010), o app usa o padrão: rotação, velocidade, temperaturas, consumo, marchas (aprendidas nas primeiras rodagens) e códigos de falha, conforme o que a central oferecer. Na primeira conexão ele mostra o que funciona no seu carro. Essa parte ainda está em teste, já rodou num GM Classic.</p></details>
     <details><summary>Pode estragar alguma coisa?</summary><p>O Dash só lê a central. A única coisa que ele escreve é apagar os códigos de falha, e só quando você pede, com o motor parado e confirmação. Não muda nenhuma configuração do carro.</p></details>
@@ -374,13 +374,25 @@
   // no repositório do app). Leitura só pelo console do Firebase.
   const form = document.getElementById('teste');
   const msg = document.getElementById('teste-msg');
-  const FIRESTORE = 'https://firestore.googleapis.com/v1/projects/dash-ka/databases/(default)/documents/testadores?key=AIzaSyAqL-VhUOFCPZEwC8uPBw08qSc3mKwDBMQ';
+  // O e-mail é o nome do documento: o 2º cadastro igual é recusado (as regras
+  // não deixam regravar) e vira "já está na lista".
+  const FIRESTORE = 'https://firestore.googleapis.com/v1/projects/dash-ka/databases/(default)/documents/testadores?key=AIzaSyAqL-VhUOFCPZEwC8uPBw08qSc3mKwDBMQ&documentId=';
+  const LINK_TESTE = 'https://play.google.com/apps/testing/br.com.kayosilva.dashka';
   function mostrarMsg(texto, ok) { msg.textContent = texto; msg.className = 'msg ' + (ok ? 'ok' : 'erro'); }
+  // Mensagem com o link do teste no fim (a liberação na Play é feita à mão).
+  function mostrarLink(texto) {
+    mostrarMsg(texto + ' Depois, abra no celular: ', true);
+    const a = document.createElement('a');
+    a.href = LINK_TESTE;
+    a.textContent = 'ativar o teste na Play Store';
+    a.onclick = () => evento('abrir_link_teste');
+    msg.append(a, '. Se a página disser que o app não está disponível, ainda não foi liberado: tente mais tarde.');
+  }
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (form.site.value) return; // robô preencheu o campo escondido
     const email = form.email.value.trim().toLowerCase();
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || email.length > 254) {
+    if (!/^[^@\s/]+@[^@\s/]+\.[^@\s/]+$/.test(email) || email.length > 254) {
       mostrarMsg('Confira o e-mail: precisa ser o da sua conta Google.', false);
       form.email.focus();
       return;
@@ -391,11 +403,18 @@
     const botao = document.getElementById('entrar');
     botao.disabled = true;
     try {
-      const r = await fetch(FIRESTORE, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fields: campos }) });
-      if (!r.ok) throw new Error(r.status);
+      const r = await fetch(FIRESTORE + encodeURIComponent(email), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fields: campos }) });
+      // 409 (já existe) ou 403 (regra recusou regravar): o e-mail já foi validado acima.
+      const repetido = r.status === 409 || r.status === 403;
+      if (!r.ok && !repetido) throw new Error(r.status);
       form.email.value = '';
-      mostrarMsg('Pronto! Você está na lista. O convite chega neste e-mail quando o teste da Play Store abrir.', true);
-      evento('entrar_teste', { origem: origem || '' });
+      if (repetido) {
+        mostrarLink('Esse e-mail já está na lista, não precisa cadastrar de novo. A liberação leva até 1 dia.');
+        evento('entrar_teste_repetido', { origem: origem || '' });
+      } else {
+        mostrarLink('Pronto! Seu e-mail entrou na lista. A liberação é feita à mão e leva até 1 dia, não chega e-mail.');
+        evento('entrar_teste', { origem: origem || '' });
+      }
     } catch (err) {
       mostrarMsg('Não deu para enviar agora. Tente de novo em instantes ou fale com @dashka.app no Instagram.', false);
     } finally {
