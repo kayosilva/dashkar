@@ -5,12 +5,12 @@ central do motor em tempo real por um adaptador OBD2 ELM327 Bluetooth: rotação
 com luz de troca, marcha, consumo e autonomia, temperaturas, diagnóstico com
 laudo em PDF, viagem e desempenho. Outros carros estão em teste.
 
-Site, download e vídeos: https://dashka.app.br/ · Instagram
+Site, download e vídeos: https://dashkar.com.br/ · Instagram
 [@dashkar.app](https://www.instagram.com/dashkar.app/) · YouTube
 [@DashKarApp](https://www.youtube.com/@DashKarApp)
 
 Este repositório guarda só o site. Grátis, sem conta e sem anúncios;
-privacidade em https://dashka.app.br/privacidade.
+privacidade em https://dashkar.com.br/privacidade.
 
 Projeto pessoal, não oficial, sem relação com a Ford Motor Company. Ford e Ka
 são marcas da Ford.
