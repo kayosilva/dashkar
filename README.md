@@ -6,8 +6,8 @@ com luz de troca, marcha, consumo e autonomia, temperaturas, diagnóstico com
 laudo em PDF, viagem e desempenho. Outros carros estão em teste.
 
 Site, download e vídeos: https://dashka.app.br/ · Instagram
-[@dashka.app](https://www.instagram.com/dashka.app/) · YouTube
-[@DashKaApp](https://www.youtube.com/@DashKaApp)
+[@dashkar.app](https://www.instagram.com/dashkar.app/) · YouTube
+[@DashKarApp](https://www.youtube.com/@DashKarApp)
 
 Este repositório guarda só o site. Grátis, sem conta e sem anúncios;
 privacidade em https://dashka.app.br/privacidade.
