@@ -1,185 +1,139 @@
 WEBVTT
 
-1
-00:00:00.704 --> 00:00:04.517
+00:00.704 --> 00:04.541
 Todo carro moderno sabe muito mais do que mostra no painel.
 
-2
-00:00:04.517 --> 00:00:10.205
-O Dash Ka lê a central do motor do Ford Ka por um adaptador OBD Bluetooth e transforma o
+00:04.541 --> 00:10.135
+O Dash Kar lê a central do motor por um adaptador OBD Bluetooth e transforma o celular
 
-3
-00:00:10.205 --> 00:00:12.080
-celular num painel esportivo.
+00:10.135 --> 00:11.696
+num computador de bordo.
 
-4
-00:00:12.493 --> 00:00:15.175
+00:12.109 --> 00:14.791
 Em cima, o conta-giros com luz de troca:
 
-5
-00:00:15.175 --> 00:00:19.669
+00:14.791 --> 00:19.285
 a barra muda de cor com a rotação e avisa a hora de subir a marcha.
 
-6
-00:00:20.076 --> 00:00:26.828
+00:19.692 --> 00:26.444
 No centro, a velocidade, a marcha engatada, calculada pela rotação, e o modo de condução:
 
-7
-00:00:26.828 --> 00:00:28.572
+00:26.444 --> 00:28.188
 econômico ou esportivo.
 
-8
-00:00:28.981 --> 00:00:33.877
+00:28.597 --> 00:33.493
 Ao lado, a força G desenha cada acelerada, frenagem e curva.
 
-9
-00:00:34.287 --> 00:00:40.253
+00:33.903 --> 00:39.869
 Nas laterais, as temperaturas do motor, do ar e do catalisador, a tensão da bateria,
 
-10
-00:00:40.253 --> 00:00:44.727
+00:39.869 --> 00:44.343
 o combustível e a autonomia, calculada pelo consumo de verdade.
 
-11
-00:00:45.138 --> 00:00:50.202
+00:44.754 --> 00:49.818
 E embaixo, o consumo instantâneo, o pedal do acelerador e o freio.
 
-12
-00:00:52.308 --> 00:00:57.348
+00:51.924 --> 00:56.964
 Deslizando para o lado, a tela do Motor mostra o que a central está fazendo.
 
-13
-00:00:57.751 --> 00:01:01.699
+00:57.367 --> 01:01.315
 As sondas lambda em tempo real e as correções de mistura:
 
-14
-00:01:01.699 --> 00:01:06.202
+01:01.315 --> 01:05.818
 a curta, que muda o tempo todo, e a longa, que a central aprende.
 
-15
-00:01:06.202 --> 00:01:09.319
+01:05.818 --> 01:08.935
 Ela também estima quanto etanol há no tanque.
 
-16
-00:01:09.730 --> 00:01:13.549
+01:09.346 --> 01:13.165
 O comando de válvulas variável aparece como duas polias:
 
-17
-00:01:13.549 --> 00:01:17.914
+01:13.165 --> 01:17.530
 a posição real e a pedida pela central, na admissão e no escape.
 
-18
-00:01:18.325 --> 00:01:23.293
+01:17.941 --> 01:22.909
 E as falhas de ignição de cada cilindro, contadas pela própria central.
 
-19
-00:01:25.404 --> 00:01:27.528
+01:25.020 --> 01:27.144
 Na Viagem, o trecho atual:
 
-20
-00:01:27.528 --> 00:01:30.468
+01:27.144 --> 01:30.084
 distância, tempo e média de consumo.
 
-21
-00:01:30.871 --> 00:01:32.202
+01:30.487 --> 01:31.818
 Onde foi o tempo:
 
-22
-00:01:32.202 --> 00:01:37.759
+01:31.818 --> 01:37.375
 rodando, parado com o motor ligado, ou em freio motor, sem gastar nada.
 
-23
-00:01:38.166 --> 00:01:42.861
+01:37.782 --> 01:42.477
 E o consumo quilômetro a quilômetro, com o relevo do caminho pelo GPS:
 
-24
-00:01:42.861 --> 00:01:45.342
+01:42.477 --> 01:44.958
 dá para ver quanto cada subida custa.
 
-25
-00:01:45.749 --> 00:01:51.437
+01:45.365 --> 01:51.053
 A viagem junta as paradas curtas e fecha sozinha depois de uma hora com o carro desligado.
 
-26
-00:01:51.842 --> 00:01:54.610
+01:51.458 --> 01:54.226
 E desde o abastecimento, a média do tanque,
 
-27
-00:01:54.610 --> 00:01:58.538
+01:54.226 --> 01:58.154
 os litros que ainda restam e o etanol que a central aprendeu.
 
-28
-00:02:00.646 --> 00:02:05.468
+02:00.262 --> 02:05.084
 No Diagnóstico, os códigos de falha guardados na central, em português,
 
-29
-00:02:05.468 --> 00:02:07.438
+02:05.084 --> 02:07.054
 com o que cada um quer dizer.
 
-30
-00:02:07.843 --> 00:02:11.948
+02:07.459 --> 02:11.564
 O app anota quando cada código apareceu e com quantos quilômetros,
 
-31
-00:02:11.948 --> 00:02:14.995
+02:11.564 --> 02:14.611
 e avisa quando um código volta depois de apagado.
 
-32
-00:02:15.402 --> 00:02:20.460
+02:15.018 --> 02:20.076
 Ao lado, os autotestes da central e os quilômetros desde a última limpeza.
 
-33
-00:02:20.460 --> 00:02:25.722
+02:20.076 --> 02:25.338
 E um toque em Laudo gera um relatório em PDF, pronto para mandar ao mecânico.
 
-34
-00:02:26.132 --> 00:02:29.765
+02:25.748 --> 02:29.381
 Em Anomalias fica o que o próprio Dash percebeu rodando:
 
-35
-00:02:29.765 --> 00:02:35.084
+02:29.381 --> 02:34.700
 a luz da bateria acesa, o freio de mão puxado andando, o motor esquentando demais.
 
-36
-00:02:35.492 --> 00:02:38.989
+02:35.108 --> 02:38.605
 Se um problema some e volta, ele vira recorrente:
 
-37
-00:02:38.989 --> 00:02:40.772
+02:38.605 --> 02:40.388
 um aviso para investigar.
 
-38
-00:02:42.879 --> 00:02:48.855
+02:42.495 --> 02:48.471
 No Desempenho, a potência e o torque nas rodas, estimados pela aceleração do carro,
 
-39
-00:02:48.855 --> 00:02:49.431
+02:48.471 --> 02:49.047
 ao vivo.
 
-40
-00:02:49.836 --> 00:02:53.535
+02:49.452 --> 02:53.151
 Ao gravar uma puxada, o app mede a arrancada:
 
-41
-00:02:53.535 --> 00:02:58.548
+02:53.151 --> 02:58.164
 0 a 60 em 7,9 s, neste exemplo, com as curvas de cada marcha.
 
-42
-00:02:58.957 --> 00:03:02.941
+02:58.573 --> 03:02.557
 E cada puxada fica guardada, para comparar depois.
 
-43
-00:03:05.047 --> 00:03:09.317
+03:04.663 --> 03:08.933
 Com o carro desligado, o Dash entra em repouso sozinho.
 
-44
-00:03:09.317 --> 00:03:12.655
+03:08.933 --> 03:12.271
 Tocou na tela, ele volta e conecta de novo.
 
-45
-00:03:13.064 --> 00:03:13.785
-Dash Ka:
+03:12.680 --> 03:13.471
+Dash Kar:
 
-46
-00:03:13.785 --> 00:03:17.480
+03:13.471 --> 03:17.072
 o seu carro, por dentro, na palma da mão.
