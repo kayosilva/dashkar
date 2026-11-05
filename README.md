@@ -1,4 +1,4 @@
-# Dash Ka
+# Dash Kar
 
 Painel esportivo no celular para o Ford Ka 1.0 Ti-VCT de 3 cilindros, lendo a
 central do motor em tempo real por um adaptador OBD2 ELM327 Bluetooth: rotação
