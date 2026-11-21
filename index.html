@@ -85,25 +85,6 @@
   .botao:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; }
   .detalhe { margin-top: 12px; color: var(--rotulo); font-size: 16px; }
 
-  /* entrar no teste (e-mail) / Play Store */
-  .teste { margin-top: 28px; max-width: 560px; }
-  .teste label { display: block; font-weight: 700; font-size: 18px; color: var(--texto); margin-bottom: 8px; }
-  .teste .linha { display: flex; flex-wrap: wrap; gap: 10px; }
-  .teste input[type=email] {
-    flex: 1 1 240px; min-width: 0; padding: 13px 16px; border-radius: 14px;
-    border: 2px solid var(--borda); background: var(--bloco); color: var(--texto);
-    font: 600 20px "Barlow Condensed", system-ui, sans-serif;
-  }
-  .teste input[type=email]:focus-visible { outline: 3px solid var(--azul); outline-offset: 2px; }
-  .teste button.botao { cursor: pointer; justify-content: center; }
-  .teste button.botao:disabled { opacity: .6; cursor: wait; }
-  .teste .explica { margin-top: 10px; font-size: 17px; color: var(--texto-claro); }
-  .teste .msg { margin-top: 10px; font-size: 18px; font-weight: 700; min-height: 1.5em; }
-  .teste .msg.ok { color: var(--eco); }
-  .teste .msg.erro { color: var(--vermelho); }
-  .isca { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
-  .na-loja .so-teste { display: none !important; }
-  body:not(.na-loja) .so-loja { display: none !important; }
   .celular {
     background: #1B2027; border: 3px solid #39424C; border-radius: 28px; padding: 12px;
     box-shadow: 0 30px 80px rgba(0,0,0,.55);
@@ -191,18 +172,8 @@
       <div class="marca"><img src="img/icone-192.png" alt=""><span>DASH KAR</span></div>
       <h1>O computador de bordo do seu <em>carro</em>, no celular.</h1>
       <p class="intro">Consumo, autonomia, temperaturas, viagens, diagnóstico e desempenho em tempo real, lidos direto da central do motor por um adaptador OBD2 Bluetooth. Completo no Ford Ka.</p>
-      <form class="teste so-teste" id="teste" novalidate>
-        <label for="email">Entre no teste pela Play Store</label>
-        <div class="linha">
-          <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required maxlength="254" placeholder="seu e-mail do Google (Gmail)">
-          <button class="botao principal" type="submit" id="entrar">Entrar no teste</button>
-        </div>
-        <input type="text" name="site" class="isca" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <p class="explica">O Dash Kar está em fase de testes antes de chegar à Play Store. Use o e-mail da conta Google do seu celular Android: ele entra na lista de testadores em até 1 dia e o link para ativar o teste e instalar pela loja aparece aqui mesmo. Quando o app for publicado, este botão leva direto para a Play Store. <a href="privacidade#teste">Como usamos o e-mail</a></p>
-        <p class="msg" id="teste-msg" role="status" aria-live="polite"></p>
-      </form>
       <div class="botoes">
-        <a class="botao principal so-loja" id="loja" href="https://play.google.com/store/apps/details?id=br.com.kayosilva.dashka">Baixar na Google Play</a>
+        <a class="botao principal" id="loja" href="https://play.google.com/store/apps/details?id=br.com.kayosilva.dashka">Baixar na Google Play</a>
         <a class="botao" href="#como-comecar">Como começar</a>
       </div>
       <p class="detalhe">Feito para o Ford Ka 1.0 e 1.5 de 3 cilindros (2014 a 2021); outros carros no básico · <a href="#compativel">confira o seu</a></p>
@@ -277,7 +248,7 @@
       <div class="passo"><div><h3>Encaixe o adaptador</h3><p>Com o carro desligado, encaixe o ELM327 na porta OBD2, embaixo do painel, abaixo do volante. Só entra de um jeito: não force.</p></div></div>
       <div class="passo"><div><h3>Ligue a ignição</h3><p>Ou já dê a partida. A luz do adaptador acende.</p></div></div>
       <div class="passo"><div><h3>Pareie no Bluetooth</h3><p>Nas configurações do celular, parear novo dispositivo, toque no "OBDII" (ou parecido). Senha 1234 ou 0000. Só na primeira vez.</p></div></div>
-      <div class="passo"><div><h3>Abra o Dash Kar</h3><p>Permita o Bluetooth e a localização. Ele conecta sozinho e o OBD fica verde no canto da tela. Se o OBD ficar amarelo, toque nele e escolha o seu adaptador na lista: das próximas vezes ele lembra.</p></div></div>
+      <div class="passo"><div><h3>Instale e abra o Dash Kar</h3><p>Grátis na <a href="https://play.google.com/store/apps/details?id=br.com.kayosilva.dashka">Google Play</a>. Permita o Bluetooth e a localização. Ele conecta sozinho e o OBD fica verde no canto da tela. Se o OBD ficar amarelo, toque nele e escolha o seu adaptador na lista: das próximas vezes ele lembra.</p></div></div>
     </div>
   </div>
 </section>
@@ -296,7 +267,7 @@
       <div class="item" id="compativel">
         <h3>Ford Ka de 3 cilindros</h3>
         <p>O Ka da geração lançada em 2014 (até 2021), com o motor 1.0 Ti-VCT ou o 1.5 de 3 cilindros: o app reconhece qual é pelas marchas, nos primeiros segundos rodando. Testado no 1.0 2020/21, em outro 1.0 e num 1.5. Outros carros com OBD2 (no Brasil, a partir de 2010) mostram o básico que a central oferecer.</p>
-        <div class="selos"><span class="selo sim">Ka 1.0 Ti-VCT 2014–2021</span><span class="selo sim">Ka 1.5 3 cilindros</span><span class="selo parcial">Outros carros: básico, em teste</span></div>
+        <div class="selos"><span class="selo sim">Ka 1.0 Ti-VCT 2014–2021</span><span class="selo sim">Ka 1.5 3 cilindros</span><span class="selo parcial">Outros carros: básico</span></div>
       </div>
     </div>
   </div>
@@ -306,12 +277,11 @@
   <div class="conteudo">
     <p class="sobre">Perguntas</p>
     <h2>Dúvidas comuns</h2>
-    <details class="so-teste"><summary>Por que não está na Play Store?</summary><p>Está a caminho. O Google exige um período de teste fechado antes de liberar o app para todo mundo. Deixe o e-mail da sua conta Google em "Entrar no teste" no topo da página: você entra na lista de testadores em até 1 dia e o link para ativar o teste e instalar pela loja aparece na hora. Com 12 testadores usando o app por 14 dias, o Dash Kar pode ser liberado para todo mundo: cada um que entra ajuda.</p></details>
     <details><summary>Quanto custa?</summary><p>Nada. O Dash Kar é grátis e não tem anúncios. Só o adaptador ELM327 é comprado à parte.</p></details>
-    <details><summary>Funciona no meu carro?</summary><p>Completo no Ford Ka da geração lançada em 2014 (até 2021) com motor de 3 cilindros, o 1.0 Ti-VCT ou o 1.5: o app reconhece o motor sozinho pelas marchas e ajusta marcha, consumo e potência. Lê também o freio, o freio de mão e o hodômetro, que são leituras próprias desse Ka. Em outros carros com OBD2 (no Brasil, a partir de 2010), o app usa o padrão: rotação, velocidade, temperaturas, consumo, marchas (aprendidas nas primeiras rodagens) e códigos de falha, conforme o que a central oferecer. Na primeira conexão ele mostra o que funciona no seu carro. Essa parte ainda está em teste, já rodou num GM Classic.</p></details>
+    <details><summary>Funciona no meu carro?</summary><p>Completo no Ford Ka da geração lançada em 2014 (até 2021) com motor de 3 cilindros, o 1.0 Ti-VCT ou o 1.5: o app reconhece o motor sozinho pelas marchas e ajusta marcha, consumo e potência. Lê também o freio, o freio de mão e o hodômetro, que são leituras próprias desse Ka. Em outros carros com OBD2 (no Brasil, a partir de 2010), o app usa o padrão: rotação, velocidade, temperaturas, consumo, marchas (aprendidas nas primeiras rodagens) e códigos de falha, conforme o que a central oferecer. Na primeira conexão ele mostra o que funciona no seu carro. Essa parte segue evoluindo e já rodou em carros como o GM Classic.</p></details>
     <details><summary>Pode estragar alguma coisa?</summary><p>O Dash só lê a central. A única coisa que ele escreve é apagar os códigos de falha, e só quando você pede, com o motor parado e confirmação. Não muda nenhuma configuração do carro.</p></details>
     <details><summary>O adaptador gasta a bateria?</summary><p>Muito pouco, mas gasta. No dia a dia ele pode ficar encaixado; se o carro for ficar parado muitos dias, tire.</p></details>
-    <details><summary>O app coleta meus dados?</summary><p>Não há conta no app nem anúncio, e o que o app lê do carro fica no celular. A internet traz a temperatura da região (Open-Meteo), com a localização aproximada. A partir da versão 1.2.0, o app também pergunta se você quer enviar relatórios anônimos de erros, de como foi a conexão com o carro e um resumo de uso só em totais (minutos e km, sem trajeto); nada vem marcado, e dá para mudar nos Ajustes. O e-mail do teste só serve para o convite da Play Store. Detalhes na <a href="privacidade">política de privacidade</a>.</p></details>
+    <details><summary>O app coleta meus dados?</summary><p>Não há conta no app nem anúncio, e o que o app lê do carro fica no celular. A internet traz a temperatura da região (Open-Meteo), com a localização aproximada. A partir da versão 1.2.0, o app também pergunta se você quer enviar relatórios anônimos de erros, de como foi a conexão com o carro e um resumo de uso só em totais (minutos e km, sem trajeto); nada vem marcado, e dá para mudar nos Ajustes. Detalhes na <a href="privacidade">política de privacidade</a>.</p></details>
     <details><summary>Não conecta. E agora?</summary><p>Confira a ignição ligada e a luz do adaptador acesa. Toque em OBD (no canto da tela) e escolha o seu adaptador na lista. Se ele não aparece ali, pareie primeiro no Bluetooth do celular (senha 1234 ou 0000). Se aparece mas não conecta, desfaça o pareamento e pareie de novo. Leitor Bluetooth 4.0/BLE (como o uScan) não aparece para parear: toque em OBD e em Procurar leitor BLE. Adaptador Wi-Fi não funciona.</p></details>
     <details><summary>Funciona sem internet?</summary><p>Sim. A conexão com o carro é pelo Bluetooth. A internet só traz a temperatura da região e, se você tiver permitido, envia os relatórios anônimos, que esperam no celular até a conexão voltar.</p></details>
   </div>
@@ -334,11 +304,6 @@
 </div>
 
 <script>
-  // Quando o Dash Kar for publicado na Play Store, troque para true: o topo
-  // mostra "Baixar na Google Play" e some tudo o que é da fase de testes.
-  const NA_LOJA = false;
-  if (NA_LOJA) document.body.classList.add('na-loja');
-
   // Google Analytics 4 só depois do "Aceitar" (LGPD). Troque o ID abaixo se mudar a propriedade.
   const GA_ID = 'G-5MG7CSDYKP';
   const CHAVE = 'dashka-cookies';
@@ -363,63 +328,12 @@
   document.getElementById('aceitar').onclick = () => { gravar('sim'); aviso.classList.remove('mostrar'); carregarGA(); };
   document.getElementById('recusar').onclick = () => { gravar('nao'); aviso.classList.remove('mostrar'); };
   document.getElementById('rever-cookies').onclick = () => aviso.classList.add('mostrar');
-  // Eventos dos links de fora (YouTube).
+  // Eventos dos links de fora (YouTube e Play Store).
   document.addEventListener('click', (e) => {
     const a = e.target.closest('a');
     if (!a) return;
     if (a.href.includes('youtu.be/') || a.href.includes('youtube.com/')) evento('abrir_youtube', { link: a.getAttribute('href') });
-  });
-  // Entrar no teste: o e-mail vai para o Firestore do projeto dash-ka
-  // (coleção `testadores`, só criação; regras em firebase/firestore.rules
-  // no repositório do app). Leitura só pelo console do Firebase.
-  const form = document.getElementById('teste');
-  const msg = document.getElementById('teste-msg');
-  // O e-mail é o nome do documento: o 2º cadastro igual é recusado (as regras
-  // não deixam regravar) e vira "já está na lista".
-  const FIRESTORE = 'https://firestore.googleapis.com/v1/projects/dash-ka/databases/(default)/documents/testadores?key=AIzaSyAqL-VhUOFCPZEwC8uPBw08qSc3mKwDBMQ&documentId=';
-  const LINK_TESTE = 'https://play.google.com/apps/testing/br.com.kayosilva.dashka';
-  function mostrarMsg(texto, ok) { msg.textContent = texto; msg.className = 'msg ' + (ok ? 'ok' : 'erro'); }
-  // Mensagem com o link do teste no fim (a liberação na Play é feita à mão).
-  function mostrarLink(texto) {
-    mostrarMsg(texto + ' Depois, abra no celular: ', true);
-    const a = document.createElement('a');
-    a.href = LINK_TESTE;
-    a.textContent = 'ativar o teste na Play Store';
-    a.onclick = () => evento('abrir_link_teste');
-    msg.append(a, '. Se a página disser que o app não está disponível, ainda não foi liberado: tente mais tarde.');
-  }
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (form.site.value) return; // robô preencheu o campo escondido
-    const email = form.email.value.trim().toLowerCase();
-    if (!/^[^@\s/]+@[^@\s/]+\.[^@\s/]+$/.test(email) || email.length > 254) {
-      mostrarMsg('Confira o e-mail: precisa ser o da sua conta Google.', false);
-      form.email.focus();
-      return;
-    }
-    const campos = { email: { stringValue: email } };
-    const origem = new URLSearchParams(location.search).get('utm_source');
-    if (origem) campos.origem = { stringValue: origem.slice(0, 40) };
-    const botao = document.getElementById('entrar');
-    botao.disabled = true;
-    try {
-      const r = await fetch(FIRESTORE + encodeURIComponent(email), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fields: campos }) });
-      // 409 (já existe) ou 403 (regra recusou regravar): o e-mail já foi validado acima.
-      const repetido = r.status === 409 || r.status === 403;
-      if (!r.ok && !repetido) throw new Error(r.status);
-      form.email.value = '';
-      if (repetido) {
-        mostrarLink('Esse e-mail já está na lista, não precisa cadastrar de novo. A liberação leva até 1 dia.');
-        evento('entrar_teste_repetido', { origem: origem || '' });
-      } else {
-        mostrarLink('Pronto! Seu e-mail entrou na lista. A liberação é feita à mão e leva até 1 dia, não chega e-mail.');
-        evento('entrar_teste', { origem: origem || '' });
-      }
-    } catch (err) {
-      mostrarMsg('Não deu para enviar agora. Tente de novo em instantes ou fale com @dashkar.app no Instagram.', false);
-    } finally {
-      botao.disabled = false;
-    }
+    if (a.href.includes('play.google.com/store')) evento('abrir_play', { origem: new URLSearchParams(location.search).get('utm_source') || '' });
   });
   document.querySelectorAll('video').forEach((v) => {
     let contou = false;

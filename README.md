@@ -3,7 +3,9 @@
 Painel esportivo no celular para o Ford Ka 1.0 Ti-VCT de 3 cilindros, lendo a
 central do motor em tempo real por um adaptador OBD2 ELM327 Bluetooth: rotação
 com luz de troca, marcha, consumo e autonomia, temperaturas, diagnóstico com
-laudo em PDF, viagem e desempenho. Outros carros estão em teste.
+laudo em PDF, viagem e desempenho. Outros carros no básico.
+
+Na Google Play: https://play.google.com/store/apps/details?id=br.com.kayosilva.dashka
 
 Site, download e vídeos: https://dashkar.com.br/ · Instagram
 [@dashkar.app](https://www.instagram.com/dashkar.app/) · YouTube
